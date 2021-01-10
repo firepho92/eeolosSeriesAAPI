@@ -1,5 +1,4 @@
 const express = require('express')
-const morgan = require('morgan')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const routes = require('./routes')
@@ -7,7 +6,6 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.use(cors())
-app.use(morgan('combined'))
 
 app.use('/', routes)
 
