@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { getDataQuery } = require('../controllers/DataController')
+const { getDataQuery, getData } = require('../controllers/DataController')
 
 const router = Router()
 
@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/get', getDataQuery)
-//Router.get('/post', getData)
+
+router.get('/getData', getData)
 
 module.exports = router
