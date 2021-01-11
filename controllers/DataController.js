@@ -2,12 +2,7 @@ const { readData, readDataById, createData } = require('../services/')
 
 const getDataQuery = async (req, res) => {
   const { temperature, humidity, pressure, gas } = req.query
-  const data = {
-    temperature,
-    humidity,
-    pressure,
-    gas
-  }
+  const data = { temperature, humidity, pressure, gas, created: Date.now() }
   try {
     const result = await createData(data)
     res.status(201).send(result)
